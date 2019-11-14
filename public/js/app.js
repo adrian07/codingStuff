@@ -68935,12 +68935,12 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "card-header"
-      }, "Blog Component"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "card-body"
-      }, "I'm an blog component!"), this.state.blogs.map(function (blog) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, blog.body);
-      })))));
+        className: "container"
+      }, this.state.blogs.map(function (blog) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          key: blog.id
+        }, blog.body);
+      }))))));
     }
   }]);
 

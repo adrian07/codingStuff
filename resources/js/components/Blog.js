@@ -7,17 +7,17 @@ export default class Blog extends Component {
     constructor() {
         super();
         this.state = {
-            blogs:[]
+            blogs: []
         }
     }
 
 
     componentDidMount() {
-        axios.get('api/blog').then(response=>{
+        axios.get('api/blog').then(response => {
             this.setState({
-                blogs:response.data
+                blogs: response.data
             })
-        }).catch(errors =>{
+        }).catch(errors => {
             console.log(errors);
         })
     }
@@ -28,9 +28,13 @@ export default class Blog extends Component {
                 <div className="row justify-content-center">
                     <div className="col-md-8">
                         <div className="card">
-                            <div className="card-header">Blog Component</div>
-                            <div className="card-body">I'm an blog component!</div>
-                            {this.state.blogs.map(blog => <li>{blog.body}</li>)}
+                            <div className="container">
+                                {
+                                    this.state.blogs.map(
+                                        blog => <li key={blog.id}>{blog.body}</li>
+                                    )
+                                }
+                            </div>
                         </div>
                     </div>
                 </div>
